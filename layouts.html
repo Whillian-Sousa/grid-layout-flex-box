@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layouts</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 3px;
+            flex: 1 1 100vw;
+            
+            background-color: wheat;
+            font-family: 'Inter', sans-serif;
+            color: slateblue;
+            font-weight: bolder;
+            font-size: 1.4rem;
+        }
+        header, nav, main, aside, footer{
+            display: flex;
+            background-color: tomato;
+            margin: 3px;
+            border-radius: 5px;
+        }
+
+        header{
+            flex: 1 1 100vw;
+        }
+
+        header #logo{
+            flex: 0 1 96px;
+        }
+
+        #openMenu, #closeMenu{
+            border: none;
+            background: none;
+            font-size: 30px;
+            font-weight: bold;
+            padding: 0px 5px;
+            cursor: pointer;
+            display: none;
+        }
+
+        nav{
+            flex: 1 1 100vw;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav a{
+            margin: 3%;
+        }
+
+        a{
+            text-decoration: none;
+            color: slateblue;
+        }
+
+        main{
+            flex: 20 1 500px;
+            flex-wrap: wrap;
+            overflow: auto;
+        }
+
+        main section{
+            width: 100%;
+            height: 2000px;
+            margin: 10px;
+            background-color: teal;
+        }
+
+        aside{
+            flex: 1 1 200px;
+        }
+
+        footer{
+            flex: 1 1 100vw;
+        }
+
+        @media only screen and (max-width: 923px){
+            header{
+                order: 0;
+
+            }
+            
+            main{
+                order: 1;
+            }
+            aside{
+                flex: 1 1 100vw;
+                order: 2;
+            }
+
+            footer{
+                order: 3;
+
+            }
+        }
+
+        @media only screen and (max-width: 717px){
+           #openMenu, #closeMenu {
+            display: block;
+           }
+
+           #openMenu{
+            margin-left: auto;
+           }
+
+           #closeMenu{
+            position: fixed;
+            right: 15px;
+            top: 15px;
+           }
+           nav{
+            position: fixed;
+            flex-direction: column;
+            width: 100vw;
+            background: wheat;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            display: none;
+            opacity: 0;
+            transition: .3s;
+           }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="imagens/logo.png" id="logo" alt="Logo corvo">
+
+        <button id="openMenu">&#9776;</button>
+
+        <nav id="menu">
+            <button id="closeMenu">X</button>
+            <a href="#">Inicio</a>
+            <a href="#">Produtos</a>
+            <a href="#">Sobre</a>
+            <a href="#">Contatos</a>
+        </nav>
+    </header>
+    
+    <aside>Relacionado</aside>
+    
+    <main>
+        <h1>Principal</h1>
+        <section></section>
+    </main>
+    
+    <footer>Rodapé</footer>
+<script src="script2.js"></script>
+</body>
+</html>
